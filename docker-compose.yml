@@ -1,0 +1,12 @@
+services: 
+  g-ied1:
+    container_name: ros
+    image: osrf/ros:noetic-desktop
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      - ./dev/:/home/dev/:rw
+    environment:
+      - DISPLAY=:0
+    command: "tail -f /dev/null"
