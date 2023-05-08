@@ -1,5 +1,5 @@
 services: 
-  g-ied1:
+  ros:
     container_name: ros
     image: osrf/ros:noetic-desktop
     privileged: true
