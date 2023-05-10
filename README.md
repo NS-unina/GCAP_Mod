@@ -1,6 +1,8 @@
 # GCAP_Mod
 
-# Guide for simple exercises for ROS
+# Guide simple exercises for ROS
+
+##[ROS Tutorials official site](http://wiki.ros.org/ROS/Tutorials)
 
 ## Prerequisites
 
@@ -58,4 +60,4 @@ Start the newly created package node:
 
 ## Made By
 
-- [@Alberto-Urraro!](https://github.com/cyberTechA)
+- [@Alberto-Urraro](https://github.com/cyberTechA)
