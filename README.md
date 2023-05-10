@@ -2,7 +2,7 @@
 
 # Guide simple exercises for ROS
 
-##[ROS Tutorials official site](http://wiki.ros.org/ROS/Tutorials)
+[ROS Tutorials official site](http://wiki.ros.org/ROS/Tutorials)
 
 ## Prerequisites
 
