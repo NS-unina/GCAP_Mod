@@ -1,0 +1,18 @@
+#I messaggi srv ROS (Service) sono utilizzati per definire il formato dei dati scambiati tra un nodo client e un nodo server in un servizio ROS. 
+#In altre parole, descrivono la struttura dei dati che possono essere inviati da un nodo client al server 
+#e la struttura dei dati che il server può inviare indietro come risposta.
+
+#Il formato dei messaggi srv ROS è simile ai messaggi di tipo ROS, con la differenza principale che i messaggi srv includono campi aggiuntivi per la definizione 
+#delle risposte. Ogni messaggio srv consiste di due parti: una richiesta (request) e una risposta (response).
+
+#La richiesta specifica i dati richiesti dal client per l'esecuzione del servizio, mentre la risposta 
+#contiene i dati restituiti dal server in risposta alla richiesta. Inoltre, ogni messaggio srv ha un nome univoco 
+#e un tipo definito, simile ai messaggi di tipo ROS.
+
+#I messaggi srv vengono utilizzati per definire i servizi ROS, che consentono ai nodi di richiedere 
+#l'esecuzione di una particolare azione da un nodo server e di ricevere una risposta dallo stesso.
+
+int64 a
+int64 b
+---
+int64 sum
