@@ -10,7 +10,7 @@ This guide provides step-by-step instructions for build and run this dockerfile
 ```
 docker build -t px4-ros-gazebo11 .
 ```
-## Before running the command, launch
+## Before running the run command, launch
 ```
 xhost +local:docker
 
