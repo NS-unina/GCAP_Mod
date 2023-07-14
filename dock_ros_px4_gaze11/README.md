@@ -34,7 +34,7 @@ docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb  -v /tmp/.X11-unix:/tmp
 
 ##  NB to compile only the px4 controller you have to run this command of the direcroty ~/PX4-Autopilot
 ```
-px4_fmu-v5_default
+make px4_fmu-v5_default
 
 ```
 function tested, compile is successful figure out if the command is right and how to edit the px4.lunch file and see what it sends to ros and gazebo 
