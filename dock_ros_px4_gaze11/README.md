@@ -10,6 +10,12 @@ This guide provides step-by-step instructions for build and run this dockerfile
 ```
 docker build -t px4-ros-gazebo11 .
 ```
+## Create Network
+```
+docker network create --driver bridge px4-network
+
+```
+
 ## Before running the run command, launch
 ```
 xhost +local:docker
