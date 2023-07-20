@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="px4" type="meas_airspeed_sim" name="meas_airspeed_sim"/>
+
+  <node pkg="px4" type="gpssim" name="gpssim"/>
+   
+  <node pkg="px4" type="barometer" name="barometer"/>
+
+</launch>

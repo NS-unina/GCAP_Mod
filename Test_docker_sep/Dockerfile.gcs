@@ -1,0 +1,16 @@
+FROM ros:noetic
+
+RUN apt update && apt install -y python3-flask pip
+
+
+WORKDIR /px4 
+COPY PX4-Autopilot/src/modules/mavlink /px4/src/modules/mavlink
+
+RUN . /opt/ros/noetic/setup.sh && rosdep install --from-paths /px4/src/modules --ignore-src -y
+
+COPY gcs_app /app
+COPY gcs_app/app/main.py /app/main.py
+RUN pip install -r /app/requirements.txt
+
+EXPOSE 8080
+CMD [ "python3", "/app/main.py" ]

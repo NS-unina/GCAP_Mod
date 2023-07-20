@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+  roscore:
+    build:
+      context: ./ros-core/
+      dockerfile: Dockerfile.ros
+    container_name: roscore
+    network_mode: host
+
+  flight_stack:
+    build:
+      context: .
+      dockerfile: Dockerfile.flight
+    container_name: flight
+    network_mode: host
+
+  sensors:
+    build:
+      context: .
+      dockerfile: Dockerfile.sensors
+    container_name: sensors
+    network_mode: host
+
+  middleware:
+    build:
+      context: .
+      dockerfile: Dockerfile.middleware
+    container_name: middleware
+    network_mode: host
+
+  estimation:
+    build:
+      context: .
+      dockerfile: Dockerfile.estimation
+    container_name: estimation
+    network_mode: host
+
+  companion:
+    build:
+      context: .
+      dockerfile: Dockerfile.companion
+    container_name: companion
+    network_mode: host
+
+  gcs:
+    build:
+      context: .
+      dockerfile: Dockerfile.gcs
+    container_name: gcs
+    ports:
+      - "8080:8080"
+    network_mode: host
+
+volumes:
+  logs:
+  config:

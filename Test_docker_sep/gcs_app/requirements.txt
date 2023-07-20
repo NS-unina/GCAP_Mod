@@ -1,0 +1,9 @@
+Flask==2.0.1
+matplotlib==3.5.3
+numpy==1.23.5
+opencv-python==4.8.0.74
+pymavlink==2.4.39
+PyYAML==6.0
+shapely==1.8.2
+pyulog==1.0.1
+websocket-client==1.6.1

@@ -1,0 +1,10 @@
+FROM ros:noetic
+
+
+WORKDIR /px4
+COPY PX4-Autopilot/src/modules/ekf2 /px4/src/modules/ekf2
+COPY PX4-Autopilot/launch /px4/src/launch
+COPY launch/ekf2.launch  /px4/
+RUN . /opt/ros/noetic/setup.sh && rosdep install --from-paths /px4/src/modules --ignore-src -y 
+
+CMD ["roslaunch", "ekf2.launch"]

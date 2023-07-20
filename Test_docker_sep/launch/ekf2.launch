@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="px4" type="ekf2" name="ekf2">
+    <param name="fcu_url" value="udp://:14540@127.0.0.1:14557"/>
+  </node>
+  
+  <node pkg="px4" type="sensor_combined" name="sensor_combined"/>
+  
+</launch>

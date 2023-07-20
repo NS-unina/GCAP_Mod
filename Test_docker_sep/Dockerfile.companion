@@ -1,0 +1,15 @@
+FROM ros:noetic
+
+RUN apt update && apt install -y python3-numpy python3-opencv pip
+
+
+WORKDIR /px4
+COPY PX4-Autopilot/src/modules/navigator /px4/src/modules/navigator
+COPY PX4-Autopilot/launch /px4/src/launch
+RUN . /opt/ros/noetic/setup.sh && rosdep install --from-paths /px4/src/modules --ignore-src -y
+
+COPY companion_app /app
+COPY companion_app/app/main.py /app/main.py
+RUN pip install -r /app/requirements.txt
+
+CMD [ "python3", "/app/main.py" ]

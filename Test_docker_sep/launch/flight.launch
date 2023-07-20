@@ -1,0 +1,13 @@
+<launch>
+
+  <arg name="fcu_url" default="udp://:14540@127.0.0.1:14557"/>
+
+  <node pkg="flight" type="mc_att_control" name="mc_att_control">
+    <param name="fcu_url" value="$(arg fcu_url)"/>
+  </node>
+
+  <node pkg="flight" type="mc_pos_control" name="mc_pos_control">
+    <param name="fcu_url" value="$(arg fcu_url)"/> 
+  </node>
+
+</launch>

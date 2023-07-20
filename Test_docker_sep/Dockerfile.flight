@@ -1,0 +1,15 @@
+FROM ros:noetic
+
+
+RUN apt update && apt install -y python3-catkin-tools python3-rosdep build-essential
+WORKDIR /px4
+COPY PX4-Autopilot/src/modules/mc_att_control /px4/src/modules/mc_att_control
+COPY PX4-Autopilot/src/modules/mc_pos_control /px4/src/modules/mc_pos_control
+COPY PX4-Autopilot/launch /px4/src/launch
+COPY launch/flight.launch  /px4/
+RUN . /opt/ros/noetic/setup.sh && catkin_make -DPACKAGE_NAME=flight
+RUN apt update && apt install -y python3-pip && pip install pyulog
+RUN . /opt/ros/noetic/setup.sh && rosdep install --from-paths /px4/src/modules --ignore-src -y
+
+CMD ["roslaunch", "flight.launch"]
+

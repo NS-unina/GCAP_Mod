@@ -1,0 +1,11 @@
+FROM ros:noetic 
+
+
+WORKDIR /px4
+COPY PX4-Autopilot/src/drivers/barometer /px4/src/drivers/barometer
+COPY PX4-Autopilot/src/drivers/imu /px4/src/drivers/imu
+COPY PX4-Autopilot/launch /px4/src/launch
+COPY launch/sensors.launch  /px4
+RUN . /opt/ros/noetic/setup.sh && rosdep install --from-paths /px4/src/drivers --ignore-src -y
+
+CMD ["roslaunch", "sensors.launch"]

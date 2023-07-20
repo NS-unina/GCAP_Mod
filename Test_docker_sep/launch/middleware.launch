@@ -1,0 +1,7 @@
+<launch>
+  
+  <include file="$(find px4)/launch/mavros_posix_sitl.launch" />
+
+  <node pkg="px4" type="mavlink" name="mavlink_interface"/>
+  
+</launch>

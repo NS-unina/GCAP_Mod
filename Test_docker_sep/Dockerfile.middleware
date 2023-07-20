@@ -1,0 +1,19 @@
+
+FROM ros:noetic
+
+RUN apt-get update && apt-get install -y cmake
+
+RUN apt-get install -y \
+    build-essential \
+    git \
+    libnanomsg-dev
+RUN . /opt/ros/noetic/setup.sh 
+WORKDIR /px4
+
+COPY PX4-Autopilot/src/modules/mavlink /px4/src/modules/mavlink
+COPY PX4-Autopilot/launch /px4/src/launch
+COPY launch/middleware.launch  /px4/
+COPY launch/px4.launch  /px4/
+RUN . /opt/ros/noetic/setup.sh && rosdep install --from-paths /px4/src/modules --ignore-src -y 
+
+CMD ["roslaunch", "middleware.launch"]
