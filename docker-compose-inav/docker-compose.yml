@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  inav_flight_controller:
+    build:
+      context: .
+      dockerfile: Dockerfile.flightcontroller
+    ports:
+      - "5760-5769:5760-5769"
+    privileged: true
+    command: tail -f /dev/null
+    networks:
+      - inav_network
+
+  inav_gps:
+    build:
+      context: .
+      dockerfile: Dockerfile.gps
+    privileged: true
+    command: tail -f /dev/null   
+    networks:
+      - inav_network
+
+networks:
+  inav_network:
