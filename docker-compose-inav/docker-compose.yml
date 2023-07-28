@@ -1,7 +1,8 @@
-version: '3.3'
+version: "3.3"
 
 services:
   inav_flight_controller:
+    container_name: flight_controller
     build:
       context: .
       dockerfile: Dockerfile.flightcontroller
@@ -13,11 +14,12 @@ services:
       - inav_network
 
   inav_gps:
+    container_name: gps
     build:
       context: .
       dockerfile: Dockerfile.gps
     privileged: true
-    command: tail -f /dev/null   
+    command: tail -f /dev/null
     networks:
       - inav_network
 
