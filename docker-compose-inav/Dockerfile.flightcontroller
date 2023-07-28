@@ -13,22 +13,23 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     libncurses5-dev \
     libncursesw5-dev \
-    xdg-utils
+    xdg-utils \
+    curl
 
 # Imposta la directory di lavoro su /root
 WORKDIR /root
 
-# Copia i file INAV Configurator e inav-6.1.1 nell'immagine
-COPY inav-6.1.1.tar.gz /root/
+# Scarica il file inav-6.1.1.tar.gz
+RUN curl -fsSL -o inav-6.1.1.tar.gz https://github.com/iNavFlight/inav/archive/refs/tags/6.1.1.tar.gz
 
+# Estrai inav-6.1.1.tar.gz nella directory /root/
+RUN tar -xvzf inav-6.1.1.tar.gz -C /root/
 
-# Estrai e compila inav-6.1.1
-RUN tar -xvzf inav-6.1.1.tar.gz && \
-    cd inav-6.1.1 && \
-    mkdir -p build_SITL && \
-    cd build_SITL && \
-    cmake -DSITL=ON -DWARNINGS_AS_ERRORS=ON -G Ninja .. && \
-    ninja
-
+# Compila inav-6.1.1
+RUN cd /root/inav-6.1.1 \
+    && mkdir -p build_SITL \
+    && cd build_SITL \
+    && cmake -DSITL=ON -DWARNINGS_AS_ERRORS=ON -G Ninja .. \
+    && ninja
 
 CMD ["/bin/bash"]

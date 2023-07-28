@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     ruby \
     file \
     python3 \
+    micro \
     python3-pip
 
 # Imposta la directory di lavoro su /root
