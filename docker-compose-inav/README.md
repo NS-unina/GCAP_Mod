@@ -65,13 +65,16 @@ Open Inav-Configurator on your machine and follow the image to set the environme
 
 ![inav-Configurator](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Inav-Configurator_1.png)
 ![Istruzioni 1](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/inav-Configurator_2.png)
-![Istruzioni 2](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/inav_Conf_final.png)
 ![TCP_port](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/TCP_port.png)
+![Istruzioni 2](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/inav_Conf_final.png)
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricopter.png)
 ![]([https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricopter.png](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricopter1_1.png))
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricpoter1_2.png)
+In step 7 choose gps and 9600 and click save and reboot
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricpoter1_3.png)
+Enable gps for navigation and telemetry and Galileo set and change protocol to NMEA and finally save and reboot
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricpoter1_4.png)
+Now the Gps will enable and it will be red because it is not receiving any data
 
 After completing the setup let's move to the gps-related docker terminal
 
@@ -108,6 +111,8 @@ Change ip and port
 
 ## Results on Inav-Configurator
 
-![Risultati](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Risultati.png)https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Risultati.png
+![Risultati](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Risultati.png)
+You can see that after launching the script in python the gps turned blue, this indicates that it is receiving data and the result you can see the real time on Inav-Configurator.
+Below is a gif extracted from the program
 
 ![gif](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Gifgps.gif)
