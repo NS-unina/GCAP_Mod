@@ -52,7 +52,7 @@ docker-compose up -d
 ## Startup command for flight_controller.
 
 ```
-1. ~./inav_6.1.1_SITL
+1. ./inav_6.1.1_SITL
 ```
 
 ![flightcontroller](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Flight_Controller.png)
