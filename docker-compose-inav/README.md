@@ -4,7 +4,7 @@ This guide provides step-by-step instructions for creating and running this envi
 
 ## Structure of the 'environment
 
-![]([struttura](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Structure.png))
+![struttura](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Structure.png)
 
 ## Download Inav-Configurator for your macchiana(the link below is for mac machine)
 
