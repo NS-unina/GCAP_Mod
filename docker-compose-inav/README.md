@@ -94,7 +94,7 @@ Follow steps
 Return to the gps terminal and run these commands
 
 ```
-1. ~./micro gps_nmea_SGTD_FG.py
+1. ./micro gps_nmea_SGTD_FG.py
 
 ```
 
@@ -103,7 +103,7 @@ Change ip and port
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/microgps.png)
 
 ```
-2. ~./python3 gps_nmea_SGTD_FG.py
+2.  python3 gps_nmea_SGTD_FG.py
 
 ```
 
