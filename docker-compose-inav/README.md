@@ -46,7 +46,7 @@ docker-compose up -d
 ## Continue to the relevant directories into flight_controller container
 
 ```
-1. cd ~/cd inav-6.1.1/build_SITL
+1. cd ~/inav-6.1.1/build_SITL
 ```
 
 ## Startup command for flight_controller.
