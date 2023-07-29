@@ -55,19 +55,23 @@ docker-compose up -d
 1. ~./inav_6.1.1_SITL
 ```
 
-![](flightcontroller)
+![flightcontroller](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Flight_Controller.png)
 
 After starting the flight_controller open Inav-Configurator on your computer
 
 ## Inav-Configurator
 
-Follow the image to set the environment correctly
+Open Inav-Configurator on your machine and follow the image to set the environment correctly
 
-![](inav-Configurator)
-![](Istruzioni 1)
-![](Istruzioni 2)
-![](TCP_port)
-![](tutte le immagini restanti)
+![inav-Configurator](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Inav-Configurator_1.png)
+![Istruzioni 1](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/inav-Configurator_2.png)
+![Istruzioni 2](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/inav_Conf_final.png)
+![TCP_port](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/TCP_port.png)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricopter.png)
+![]([https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricopter.png](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricopter1_1.png))
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricpoter1_2.png)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricpoter1_3.png)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Quadricpoter1_4.png)
 
 After completing the setup let's move to the gps-related docker terminal
 
@@ -80,7 +84,7 @@ Follow steps
 2.  docker inspect fligh_controller
 ```
 
-![](Dockeri_nspect)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Docker_inspect.png)
 
 ## Gps terminal
 
@@ -93,17 +97,17 @@ Return to the gps terminal and run these commands
 
 Change ip and port
 
-![](microgps)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/microgps.png)
 
 ```
 2. ~./python3 gps_nmea_SGTD_FG.py
 
 ```
 
-![](python3 gps)
+![python3 gps](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/python3gps.png)
 
 ## Results on Inav-Configurator
 
-![](Risultati)
+![Risultati](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Risultati.png)https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Risultati.png
 
-![](git)
+![gif](https://github.com/NS-unina/GCAP_Mod/blob/main/docker-compose-inav/screen/Gifgps.gif)
