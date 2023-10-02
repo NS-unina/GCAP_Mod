@@ -19,6 +19,8 @@ WORKDIR /root
 # Copia il file gps_simulator.py nell'immagine
 COPY gps_nmea_SGTD_FG.py /root/
 COPY gps_nmea.txt /root/
+COPY gps_nmea_SGTD_FG_proxy.py /root/
+COPY proxy.py /root/
 
 
 CMD ["/bin/bash"]
