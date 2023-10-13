@@ -11,7 +11,8 @@ services:
     privileged: true
     command: tail -f /dev/null
     networks:
-      - inav_network
+      inav_network:
+        ipv4_address: 172.18.0.2
 
   inav_gps:
     container_name: gps
@@ -21,7 +22,24 @@ services:
     privileged: true
     command: tail -f /dev/null
     networks:
-      - inav_network
+      inav_network:
+        ipv4_address: 172.18.0.3
+      
+  inav_attack:
+    container_name: attack
+    build:
+      context: .
+      dockerfile: Dockerfile.attack
+    privileged: true
+    command: tail -f /dev/null
+    networks:
+      inav_network:
+        ipv4_address: 172.18.0.4
 
 networks:
   inav_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
