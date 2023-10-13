@@ -1,0 +1,29 @@
+# Utilizza l'immagine ufficiale di Ubuntu come immagine di base
+FROM ubuntu:22.04
+
+# Aggiorna e installa i pacchetti necessari
+RUN apt-get update && apt-get install -y \
+    git \
+    build-essential \
+    ninja-build \
+    cmake \
+    ruby \
+    file \
+    python3 \
+    micro \
+    python3-pip 
+ 
+
+RUN pip install scapy
+RUN apt-get update && apt-get install -y libpcap0.8
+
+# Imposta la directory di lavoro su /root
+WORKDIR /root
+
+# Copia il file gps_simulator.py nell'immagine
+
+COPY attack_final.py /root/
+COPY attack_final2.py /root/
+
+
+CMD ["/bin/bash"]
