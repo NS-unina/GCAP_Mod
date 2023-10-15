@@ -56,7 +56,6 @@ def modify_coordinates(dati_nmea):
             print(f"Longitudine Originale (GPGGA): {longitudine:.6f}")
             print(f"Altitudine Originale (GPGGA): {altitudine:.2f}")
 
-            # Modifica la latitudine, longitudine e altitudine (ad esempio, aggiungi 5 gradi a ciascuna)
             latitudine += 5
             longitudine += 5
             altitudine += 50
@@ -73,11 +72,11 @@ def modify_coordinates(dati_nmea):
         elif riga.startswith("$GPGSA"):
             parti = riga.split(",")
             # Esegui le modifiche necessarie per la frase $GPGSA
-            # Ad esempio, modifica il PDOP (Position Dilution of Precision) all'indice 15
+            
             pdop = float(parti[15])
             print(f"PDOP Originale (GPGSA): {pdop:.1f}")
 
-            # Modifica il PDOP (ad esempio, aggiungi 20)
+
             pdop += 20
 
             parti[15] = f"{pdop:.1f}"
@@ -92,7 +91,7 @@ def modify_coordinates(dati_nmea):
             print(f"Latitudine Originale (GPRMC): {latitudine:.6f}")
             print(f"Longitudine Originale (GPRMC): {longitudine:.6f}")
 
-            # Modifica la latitudine e la longitudine (ad esempio, aggiungi 5 gradi a ciascuna)
+  
             latitudine += 5
             longitudine += 5
 
@@ -129,7 +128,7 @@ def handle_packet(packet, target_ip, target_port, client_port):
             # Invia il pacchetto modificato
             send(modified_packet, verbose=False)
             print("Pacchetto modificato ed inviato.")
-            time.sleep(1)  # Attendi 1 secondo prima di catturare la risposta
+            time.sleep(1) 
 
 def ripristina(target_ip, host_ip, verbose=True):
     target_mac = get_mac(target_ip)
