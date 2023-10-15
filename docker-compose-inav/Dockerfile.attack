@@ -11,7 +11,11 @@ RUN apt-get update && apt-get install -y \
     file \
     python3 \
     micro \
-    python3-pip 
+    python3-pip \
+    net-tools \
+    iputils-arping
+    
+    
  
 
 RUN pip install scapy
