@@ -23,7 +23,7 @@ WORKDIR /root
 # Copia il file gps_simulator.py nell'immagine
 
 COPY attack_final.py /root/
-COPY attack_final2.py /root/
+
 
 
 CMD ["/bin/bash"]
