@@ -2,7 +2,7 @@ import socket
 import time
 
 def send_nmea_data(host, port, data):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
         try:
             client_socket.connect((host, port))
             for line in data:
