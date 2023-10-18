@@ -34,4 +34,4 @@ if __name__ == "__main__":
 
     if nmea_data:
         # Connessione al server locale sulla porta 5762 e invio dei dati NMEA
-        send_nmea_data("ip docker flight_controller", 1234, nmea_data)
+        send_nmea_data("172.18.0.2", 5762, nmea_data)
