@@ -2,8 +2,11 @@ import socket
 import time
 
 def send_nmea_data(host, port, data):
+     client_port = 3000  
+
      with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
         try:
+            client_socket.bind(("0.0.0.0", client_port))
             client_socket.connect((host, port))
             for line in data:
                 client_socket.sendall(f"{line}\r\n".encode())
