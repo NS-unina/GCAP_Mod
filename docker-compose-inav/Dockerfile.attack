@@ -13,10 +13,12 @@ RUN apt-get update && apt-get install -y \
     micro \
     python3-pip \
     net-tools \
-    iputils-arping
-    
-    
+    iputils-arping\
+    tcpdump \
+    dsniff
  
+# Abilita l'IP forwarding
+RUN echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
 
 RUN pip install scapy
 RUN apt-get update && apt-get install -y libpcap0.8
@@ -27,7 +29,7 @@ WORKDIR /root
 # Copia il file gps_simulator.py nell'immagine
 
 COPY attack_final.py /root/
-
+COPY attack_final2.py /root/
 
 
 CMD ["/bin/bash"]
