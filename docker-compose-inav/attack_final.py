@@ -47,14 +47,23 @@ def modify_coordinates(nmea_data):
     for line in nmea_data:
         if line.startswith("$GPGGA"):
             parts = line.split(",")
-            latitude = float(parts[2][:2]) + float(parts[2][2:]) / 60
-            print(f"Latitudine Originale (GPGGA): {latitude:.3f}")
+            latitude_degrees = int(parts[2][:2])
+            latitude_minutes = float(parts[2][2:])
+            print(f"Latitudine Originale (GPGGA): {latitude_degrees:02d}{latitude_minutes:06.3f}")
 
-         
-            latitude += 10
+            # Aggiungi 10 ai gradi di latitudine esistenti
+            latitude_degrees += 10
 
-            parts[2] = f"{latitude:.3f}"
-            print(f"Latitudine Modificata (GPGGA): {latitude:.3f}")
+            # Aggiungi 10 ai minuti di latitudine esistenti
+            latitude_minutes += 10
+
+            # Assicurati che i minuti non superino 59.999
+            if latitude_minutes >= 60:
+                latitude_degrees += 1
+                latitude_minutes -= 60
+
+            parts[2] = f"{latitude_degrees:02d}{latitude_minutes:06.3f}"
+            print(f"Latitudine Modificata (GPGGA): {latitude_degrees:02d}{latitude_minutes:06.3f}")
             modified_data.append(",".join(parts))
         elif line.startswith("$GPGSA"):
             parts = line.split(",")
@@ -63,7 +72,7 @@ def modify_coordinates(nmea_data):
             pdop = float(parts[15])
             print(f"PDOP Originale (GPGSA): {pdop:.1f}")
 
-            
+            # Aggiungi 10 al valore PDOP esistente
             pdop += 10
 
             parts[15] = f"{pdop:.1f}"
@@ -71,19 +80,29 @@ def modify_coordinates(nmea_data):
             modified_data.append(",".join(parts))
         elif line.startswith("$GPRMC"):
             parts = line.split(",")
-            latitude = float(parts[3][:2]) + float(parts[3][2:]) / 60
-            print(f"Latitudine Originale (GPRMC): {latitude:.3f}")
+            latitude_degrees = int(parts[3][:2])
+            latitude_minutes = float(parts[3][2:])
+            print(f"Latitudine Originale (GPRMC): {latitude_degrees:02d}{latitude_minutes:06.3f}")
 
-            
-            latitude += 10
+            # Aggiungi 10 ai gradi di latitudine esistenti
+            latitude_degrees += 10
 
-            parts[3] = f"{latitude:.3f}"
-            print(f"Latitudine Modificata (GPRMC): {latitude:.3f}")
+            # Aggiungi 10 ai minuti di latitudine esistenti
+            latitude_minutes += 10
+
+            # Assicurati che i minuti non superino 59.999
+            if latitude_minutes >= 60:
+                latitude_degrees += 1
+                latitude_minutes -= 60
+
+            parts[3] = f"{latitude_degrees:02d}{latitude_minutes:06.3f}"
+            print(f"Latitudine Modificata (GPRMC): {latitude_degrees:02d}{latitude_minutes:06.3f}")
             modified_data.append(",".join(parts))
         else:
             modified_data.append(line)
 
     return modified_data
+
 
 
 
