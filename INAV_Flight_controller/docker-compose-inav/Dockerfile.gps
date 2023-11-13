@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     net-tools \
     iputils-arping
- 
+
 
 RUN pip install scapy
 
@@ -22,10 +22,11 @@ RUN pip install scapy
 WORKDIR /root
 
 # Copia il file gps_simulator.py nell'immagine
-COPY gps_nmea_SGTD_FG.py /root/
-COPY gps_nmea.txt /root/
-COPY gps_nmea_SGTD_FG_proxy.py /root/
-COPY proxy.py /root/
-
+COPY container_GPS/gps_nmea_SGTD_FG.py /root/
+COPY container_GPS/gps_nmea.txt /root/
+COPY container_GPS/gps_nmea_SGTD_FG_proxy.py /root/
+COPY container_GPS/proxy.py /root/
+COPY container_GPS/missioneMSP.py /root/
+COPY container_GPS/gps_coordinate_missione.txt /root/
 
 CMD ["/bin/bash"]

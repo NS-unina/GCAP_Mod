@@ -3,6 +3,7 @@ import struct
 import time
 import argparse
 
+
 def build_msp_packet(command, data):
     """Costruisce un pacchetto MSP."""
     payload_length = len(data)
@@ -15,13 +16,16 @@ def build_msp_packet(command, data):
         checksum ^= byte
 
     # Struttura MSP: ['$' 'M' '<' payload_length command data checksum]
-    packet = [ord('$'), ord('M'), ord('<'), payload_length, command] + data + [checksum]
+    packet = [ord('$'), ord('M'), ord('<'), payload_length,
+              command] + data + [checksum]
 
     return bytes(packet)
+
 
 def send_msp_packet(packet, sock):
     """Invia un pacchetto MSP tramite socket."""
     sock.send(packet)
+
 
 def set_gps_position(sock, lat, lon):
     """Imposta i dati GPS tramite MSP."""
@@ -37,17 +41,20 @@ def set_gps_position(sock, lat, lon):
     speed = 0  # Velocità in cm/s
 
     # Impacchetta i dati GPS
-    data = struct.pack('<BBIIhh', fix, numSat, lat ,lon, altitude, speed)
+    data = struct.pack('<BBIIhh', fix, numSat, lat, lon, altitude, speed)
     data = list(data)
 
     packet = build_msp_packet(command, data)
     send_msp_packet(packet, sock)
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Send GPS coordinates via MSP protocol.")
-    parser.add_argument("--ip", type=str, , help="IP address of the server")
-    parser.add_argument("--port", type=int,  help="Port number of the server")
-    parser.add_argument("--file", type=str, help="File containing coordinates")
+    parser = argparse.ArgumentParser(
+        description="Invia coordinate GPS tramite protocollo MSP.")
+    parser.add_argument("--ip", type=str, help="Indirizzo IP del server")
+    parser.add_argument("--port", type=int, help="Numero di porta del server")
+    parser.add_argument("--file", type=str,
+                        help="File contenente le coordinate")
     args = parser.parse_args()
 
     # Crea una connessione socket TCP
@@ -58,12 +65,12 @@ def main():
         with open(args.file, 'r') as file:
             for line in file:
                 lat, lon = map(float, line.strip().split(','))
-                
+
                 # Imposta la posizione GPS utilizzando le coordinate dal file
                 print(f"Mando coordinate attacco: {lat}, {lon}")
                 set_gps_position(sock, lat, lon)
                 time.sleep(0.1)
 
+
 if __name__ == "__main__":
     main()
-

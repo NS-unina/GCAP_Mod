@@ -11,7 +11,7 @@ services:
     privileged: true
     command: tail -f /dev/null
     networks:
-      inav_network:
+      inav:
         ipv4_address: 172.18.0.2
 
   inav_gps:
@@ -22,9 +22,9 @@ services:
     privileged: true
     command: tail -f /dev/null
     networks:
-      inav_network:
+      inav:
         ipv4_address: 172.18.0.3
-      
+
   inav_attack:
     container_name: attack
     build:
@@ -33,11 +33,11 @@ services:
     privileged: true
     command: tail -f /dev/null
     networks:
-      inav_network:
+      inav:
         ipv4_address: 172.18.0.4
 
 networks:
-  inav_network:
+  inav:
     driver: bridge
     ipam:
       driver: default

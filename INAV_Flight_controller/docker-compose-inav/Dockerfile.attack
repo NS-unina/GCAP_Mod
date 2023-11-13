@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     iputils-arping\
     tcpdump \
     dsniff
- 
+
 # Abilita l'IP forwarding
 RUN echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
 
@@ -28,8 +28,9 @@ WORKDIR /root
 
 # Copia il file gps_simulator.py nell'immagine
 
-COPY attack_final.py /root/
-COPY attack_final2.py /root/
-
+COPY container_Attacker/attack_final.py /root/
+COPY container_Attacker/attack_final2.py /root/
+COPY container_Attacker/attackMSP.py /root/
+COPY container_Attacker/Coordinate_Attacco.txt /root/
 
 CMD ["/bin/bash"]
