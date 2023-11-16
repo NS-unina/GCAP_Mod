@@ -126,9 +126,9 @@ Below is a gif extracted from the program
 The first step is to change the INAV gps configuration
 
 ## Modify Inav-Configurator
-![](qui1)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack1.png)
 In step 18 choose Enable MSP and click save and restart 
-![](qui2)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack2.png)
 Enable gps for navigation and telemetry and set up Galileo and change the protocol to MSP and finally save and restart.
 
 ## Launching docker exec for the Attacker container in a dedicated terminal 
@@ -137,7 +137,7 @@ Enable gps for navigation and telemetry and set up Galileo and change the protoc
    1. docker exec -ti attack bash
 
 ```
-![Container attack](qui3)
+![Container attack](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack_terminale_3.png)
 
 
 ## Gps terminal
@@ -150,7 +150,7 @@ After the complete setting of Inav and the attacker container we return to the g
 ```
 
 The result of INAV receiving of the mission
-![Screen missione coordinate MSP](qui4)
+![Screen missione coordinate MSP](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/CoordinateGPS_misisone_MSP.png)
 
 
 
@@ -164,9 +164,9 @@ Move to the attacker terminal and launch this command to complete the attack
 ```
 
 
-The result of the INAV receiving the attack co-ordinates at the same time as it is receiving the mission coordinates to be carried out
+The result of the INAV receiving the attack coordinates at the same time as it is receiving the mission coordinates to be carried out
 
-![Screen missione coordinate Attacco](qui4)
+![Screen missione coordinate Attacco](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Coordinate_attaccante.png)
 
 
 ## 2. Physical Attack
