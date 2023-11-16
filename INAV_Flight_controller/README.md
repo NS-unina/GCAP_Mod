@@ -171,3 +171,17 @@ The result of the INAV receiving the attack coordinates at the same time as it i
 
 ## 2. Physical Attack
 
+After carrying out a software attack, to see if it was possible to carry out the same attack on a physical level, we equipped ourselves with a dji drone and a HackRF One
+
+## Setting up the Environment
+### Physical Instruments
+
+The physical instruments useful for the complete set are a HackRF and a dji drone in this case a Mavic mini 2
+
+![Mavic mini 2]()
+![HackRF ONE]()
+
+
+
+### Software Istruments
+
