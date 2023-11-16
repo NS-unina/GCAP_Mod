@@ -178,8 +178,8 @@ After carrying out a software attack, to see if it was possible to carry out the
 
 The physical instruments useful for the complete set are a HackRF and a dji drone in this case a Mavic mini 2
 
-![Mavic mini 2]()
-![HackRF ONE]()
+![Mavic mini 2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
+![HackRF ONE](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
 
 
 
