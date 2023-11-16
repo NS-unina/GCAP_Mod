@@ -185,3 +185,20 @@ The physical instruments useful for the complete set are a HackRF and a dji dron
 
 ### Software Istruments
 
+The relevant software tool to carry out the attack is gps-sdr-sim available at the following link :https://github.com/osqzss/gps-sdr-sim
+
+The repository contains the gps-sdr-sim folder compiled for ARM processors 
+
+
+```
+1. The first step is to download the RINEX navigation files for GPS ephemerides.
+It is necessary to download the latest file directly from the NASA website: https://cddis.nasa.gov/archive/gnss/data/daily/.
+
+```
+![Rinix1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
+![Rinix2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
+![Rinix3](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
+![Rinix4](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
+![Rinix5](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
+
+
