@@ -6,7 +6,7 @@ This guide provides step-by-step instructions for creating and running this envi
 
 ![struttura](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Structure.png)
 
-## Download Inav-Configurator for your macchiana(the link below is for mac machine)
+## Download Inav-Configurator for your machine(the link below is for mac machine)
 
 ```
    https://github.com/iNavFlight/inav-configurator/releases/download/6.1.0/INAV-Configurator_macOS_6.1.0.dmg
@@ -71,7 +71,7 @@ Open Inav-Configurator on your machine and follow the image to set the environme
 ![](<[https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Quadricopter.png](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Quadricopter1_1.png)>)
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Quadricpoter1_2.png)
 In step 7 choose gps and 9600 and click save and reboot
-![](Quadricpoter1_3.png)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Quadricpoter1_3.png)
 Enable gps for navigation and telemetry and Galileo set and change protocol to NMEA and finally save and reboot
 ![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Quadricpoter1_4.png)
 Now the Gps will enable and it will be red because it is not receiving any data
@@ -116,3 +116,58 @@ You can see that after launching the script in python the gps turned blue, this 
 Below is a gif extracted from the program
 
 ![gif](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Gifgps.gif)
+
+
+## After the overall configuration we move on to the security of the enviroment
+
+## 1. Software Attack
+
+
+The first step is to change the INAV gps configuration
+
+## Modify Inav-Configurator
+![](qui1)
+In step 18 choose Enable MSP and click save and restart 
+![](qui2)
+Enable gps for navigation and telemetry and set up Galileo and change the protocol to MSP and finally save and restart.
+
+## Launching docker exec for the Attacker container in a dedicated terminal 
+
+```
+   1. docker exec -ti attack bash
+
+```
+![Container attack](qui3)
+
+
+## Gps terminal
+
+After the complete setting of Inav and the attacker container we return to the gps terminal and run this command for start the mission
+
+```
+1. python3 missioneMSP.py  --ip 172.18.0.2 --port 5762 --file gps_coordinate_missione.txt
+
+```
+
+The result of INAV receiving of the mission
+![Screen missione coordinate MSP](qui4)
+
+
+
+## Attacker terminal
+
+Move to the attacker terminal and launch this command to complete the attack
+
+```
+1. python3 attackMSP.py --ip 172.18.0.2 --port 5761 --file Coordinate_Attacco.txt
+
+```
+
+
+The result of the INAV receiving the attack co-ordinates at the same time as it is receiving the mission coordinates to be carried out
+
+![Screen missione coordinate Attacco](qui4)
+
+
+## 2. Physical Attack
+
