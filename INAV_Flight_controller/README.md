@@ -232,5 +232,5 @@ Running scripts
 
 ![Risultato1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato1.png)
 
-![Risultato2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato2.png)
+![Risultato2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato2.jpg)
 
