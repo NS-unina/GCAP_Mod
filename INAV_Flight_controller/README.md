@@ -225,12 +225,12 @@ Now, after connecting everything, you need to move to the gps-sdr-sim directory 
 
 Running scripts
 
-![Running scripts]()
+![Running scripts](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/runnung_script.png)
 
 
 ### Results
 
-![Risultato1]()
+![Risultato1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato1.png)
 
-![Risultato2]()
+![Risultato2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato2.png)
 
