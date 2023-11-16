@@ -195,10 +195,10 @@ The repository contains the gps-sdr-sim folder compiled for ARM processors
 It is necessary to download the latest file directly from the NASA website: https://cddis.nasa.gov/archive/gnss/data/daily/.
 
 ```
-![Rinix1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
-![Rinix2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
-![Rinix3](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
-![Rinix4](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
-![Rinix5](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
+![Rinix1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix1.png)
+![Rinix2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix2.png)
+![Rinix3](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix3.png)
+![Rinix4](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix4.png)
+![Rinix5](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix5.png)
 
 
