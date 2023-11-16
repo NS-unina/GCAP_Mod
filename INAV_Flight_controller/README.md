@@ -215,3 +215,22 @@ When installation is complete, connect the whole set as in the photo:
 ![setComplite](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/set_complite.png)
 
 
+Now, after connecting everything, you need to move to the gps-sdr-sim directory and run the following command to start the attack
+
+
+```
+ ./hackrf_transfer -t Testcina.C8 -f 1575420000 -s 2600000 -a 0 
+
+```
+
+Running scripts
+
+![Running scripts]()
+
+
+### Results
+
+![Risultato1]()
+
+![Risultato2]()
+
