@@ -212,6 +212,6 @@ After creating the file, you need to install the hrfs software by following the 
 
 When installation is complete, connect the whole set as in the photo:
 
-![setComplite]()
+![setComplite](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/set_complite.png)
 
 
