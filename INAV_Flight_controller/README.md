@@ -187,8 +187,6 @@ The physical instruments useful for the complete set are a HackRF and a dji dron
 
 The relevant software tool to carry out the attack is gps-sdr-sim available at the following link :https://github.com/osqzss/gps-sdr-sim
 
-The repository contains the gps-sdr-sim folder compiled for ARM processors 
-
 
 ```
 1. The first step is to download the RINEX navigation files for GPS ephemerides.
@@ -200,5 +198,20 @@ It is necessary to download the latest file directly from the NASA website: http
 ![Rinix3](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix3.png)
 ![Rinix4](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix4.png)
 ![Rinix5](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix5.png)
+
+
+After downloading the file, copy it into the gps-sdr-sim directory (which has been previously compiled and set according to the guide in the previous link) and run the following command to create the .C8 file for the coordinates
+
+```
+ ./gps-sdr-sim -e brdc3170.23n -s 2600000 -b 8 -o TestCina.C8 -l 30.293650, 120.161420,100 -d 10 
+
+```
+
+After creating the file, you need to install the hrfs software by following the following linkk guide :https://hackrf.readthedocs.io/en/latest/installing_hackrf_software.html
+
+
+When installation is complete, connect the whole set as in the photo:
+
+![setComplite]()
 
 
