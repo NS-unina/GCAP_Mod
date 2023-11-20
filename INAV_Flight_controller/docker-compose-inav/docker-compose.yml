@@ -36,6 +36,17 @@ services:
       inav:
         ipv4_address: 172.18.0.4
 
+  inav_radio_command:
+    container_name: radio_command
+    build:
+      context: .
+      dockerfile: Dockerfile.rc
+    privileged: true
+    command: tail -f /dev/null
+    networks:
+      inav:
+        ipv4_address: 172.18.0.5
+
 networks:
   inav:
     driver: bridge
