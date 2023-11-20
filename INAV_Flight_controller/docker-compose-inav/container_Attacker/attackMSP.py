@@ -49,6 +49,17 @@ def set_gps_position(sock, lat, lon):
 
 
 def main():
+    # Stampa all'avvio
+    print()
+    print(" _   _     _      _    _   ")
+    print("| | | |   / \    | |  / /  ")
+    print("| | | |  /   \   | | / /   ")
+    print("| |_| | / _ _ \  | |/ /    ")
+    print(" \___/ /_/   \_\ |___/     ")
+    print("                           ")
+    print("MSP Attack")
+    print()
+
     parser = argparse.ArgumentParser(
         description="Invia coordinate GPS tramite protocollo MSP.")
     parser.add_argument("--ip", type=str, help="Indirizzo IP del server")
@@ -67,7 +78,7 @@ def main():
                 lat, lon = map(float, line.strip().split(','))
 
                 # Imposta la posizione GPS utilizzando le coordinate dal file
-                print(f"Mando coordinate attacco: {lat}, {lon}")
+                print(f"Coordinate attacco: {lat}, {lon}")
                 set_gps_position(sock, lat, lon)
                 time.sleep(0.1)
 
