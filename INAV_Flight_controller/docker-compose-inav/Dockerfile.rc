@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /root
 
 # Copia il file gps_simulator.py nell'immagine
-COPY container_radio_comando/AttackRC_msp_fisso.py /root/
+
 COPY container_radio_comando/RCmission.py /root/
 
 

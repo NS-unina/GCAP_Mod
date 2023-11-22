@@ -33,5 +33,6 @@ COPY container_Attacker/attack_final.py /root/
 COPY container_Attacker/attack_final2.py /root/
 COPY container_Attacker/attackMSP.py /root/
 COPY container_Attacker/Coordinate_Attacco.txt /root/
+COPY container_radio_comando/AttackRC_msp_fisso.py /root/
 
 CMD ["/bin/bash"]
