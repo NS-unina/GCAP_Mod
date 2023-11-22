@@ -64,7 +64,7 @@ def main():
 
     # Crea una connessione socket TCP
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.connect(('localhost', 5762))
+        sock.connect((args.ip, args.port))
 
         while True:
             # A E T R -> 1 2 4 3

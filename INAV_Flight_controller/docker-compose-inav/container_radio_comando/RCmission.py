@@ -56,15 +56,15 @@ def main():
     parser = argparse.ArgumentParser(
         description='Controllo remoto dei canali RC tramite MSP')
     parser.add_argument(
-        '--ip', type=str, help='Indirizzo IP del dispositivo da controllare')
-    parser.add_argument('--port', type=int,
+        "--ip", type=str, help='Indirizzo IP del dispositivo da controllare')
+    parser.add_argument("--port", type=int,
                         help='Porta del dispositivo da controllare')
 
     args = parser.parse_args()
 
     # Crea una connessione socket TCP
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.connect((args.ip_address, args.port))
+        sock.connect((args.ip, args.port))
 
         while True:
             # A E T R -> 1 2 4 3
