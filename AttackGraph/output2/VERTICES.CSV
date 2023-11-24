@@ -1,15 +1,15 @@
 1,"canTamper(controlFlow4)","OR",0
-2,"RULE 11 (Access transport network)","AND",1
+2,"RULE 13 (Access transport network)","AND",1
 3,"controlFlow(gpsModule,autopilot,controlFlow4)","LEAF",1
 4,"bruteForceIO(autopilot)","OR",0
 5,"RULE 1 (Wireless Compromised)","AND",1
 6,"weaknessApplicationLayer(ds2,gpsModule,autopilot,msp)","LEAF",1
 7,"networkSniffing(gpsModule,autopilot)","OR",0
-8,"RULE 5 (Firmware Compromised)","AND",1
+8,"RULE 7 (Firmware Compromised)","AND",1
 9,"execCode(gpsModule,root)","OR",0
-10,"RULE 4 (Root execution code)","AND",0.8
+10,"RULE 6 (Root execution code)","AND",0.8
 11,"moduleFirmware(gpsModule)","OR",0
-12,"RULE 3 (Firmware Compromised)","AND",1
+12,"RULE 5 (Firmware Compromised)","AND",1
 13,"weaknessComponent(ds6,gpsModule)","LEAF",1
 14,"attackerLocated(droneAccess)","LEAF",1
-15,"RULE 7 (Controller compromised)","AND",1
+15,"RULE 2 (Wireless Compromised)","AND",1

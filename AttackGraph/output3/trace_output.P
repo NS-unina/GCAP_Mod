@@ -54,7 +54,7 @@ derived(netVisibility,1).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(canTamper(controlFlow4)).
+attack(canTamper(controlFlow2)).
 
 possible_duplicate_trace_step(because(5,rule_desc('Firmware Compromised',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
 
@@ -68,13 +68,13 @@ possible_duplicate_trace_step(because(6,rule_desc('Root execution code',likely),
 
 possible_duplicate_trace_step(because(6,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('Firmware Compromised',certain),networkSniffing(gpsModule,autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(8,rule_desc('Firmware Compromised',certain),networkSniffing(gpsModule,radiocontroller),[weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp),trafficVisibility(gpsModule,radiocontroller),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(1,rule_desc('Wireless Compromised',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(9,rule_desc('Firmware Compromised',certain),networkSniffing(gpsModule,autopilot),[weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp),trafficVisibility(gpsModule,radiocontroller),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('Wireless Compromised',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(2,rule_desc('Wireless Compromised',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(13,rule_desc('Access transport network',certain),canTamper(controlFlow4),[controlFlow(gpsModule,autopilot,controlFlow4),bruteForceIO(autopilot)])).
+possible_duplicate_trace_step(because(3,rule_desc('Wireless Compromised',certain),bruteForceIO(radiocontroller),[weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp),networkSniffing(gpsModule,radiocontroller),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(13,rule_desc('Access transport network',certain),canTamper(controlFlow4),[controlFlow(gpsModule,autopilot,controlFlow4),bruteForceIO(autopilot)])).
+possible_duplicate_trace_step(because(13,rule_desc('Access transport network',certain),canTamper(controlFlow2),[controlFlow(radiocontroller,autopilot,controlFlow2),bruteForceIO(autopilot)])).
 

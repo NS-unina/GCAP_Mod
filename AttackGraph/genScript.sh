@@ -63,7 +63,7 @@ echo $architecture $rules $output
 if [ -d $output ]; then
     read -p "The directory '$output' already exists. Do you want to delete it? (y/n): " response
     if [ $response == "y" ]; then
-        rm -r $output
+        rm -rf $output
         echo "Directory '$output' deleted."
     else
         echo "Exiting script without creating or deleting the directory."

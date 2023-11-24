@@ -1,0 +1,33 @@
+digraph G {
+	1 [label="1:canTamper(controlFlow2)",shape=diamond];
+	2 [label="2:RULE 13 (Access transport network)",shape=ellipse];
+	3 [label="3:controlFlow(radiocontroller,autopilot,controlFlow2)",shape=box];
+	4 [label="4:bruteForceIO(autopilot)",shape=diamond];
+	5 [label="5:RULE 2 (Wireless Compromised)",shape=ellipse];
+	6 [label="6:weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp)",shape=box];
+	7 [label="7:networkSniffing(gpsModule,autopilot)",shape=diamond];
+	8 [label="8:RULE 9 (Firmware Compromised)",shape=ellipse];
+	9 [label="9:trafficVisibility(gpsModule,radiocontroller)",shape=box];
+	10 [label="10:execCode(gpsModule,root)",shape=diamond];
+	11 [label="11:RULE 6 (Root execution code)",shape=ellipse];
+	12 [label="12:moduleFirmware(gpsModule)",shape=diamond];
+	13 [label="13:RULE 5 (Firmware Compromised)",shape=ellipse];
+	14 [label="14:weaknessComponent(ds6,gpsModule)",shape=box];
+	15 [label="15:attackerLocated(droneAccess)",shape=box];
+	3 -> 	2;
+	6 -> 	5;
+	6 -> 	8;
+	9 -> 	8;
+	14 -> 	13;
+	15 -> 	13;
+	13 -> 	12;
+	12 -> 	11;
+	11 -> 	10;
+	10 -> 	8;
+	8 -> 	7;
+	7 -> 	5;
+	10 -> 	5;
+	5 -> 	4;
+	4 -> 	2;
+	2 -> 	1;
+}

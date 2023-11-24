@@ -44,7 +44,6 @@ primitive(canAccessFile(_host, _user, _access, _path)).
 primitive(controlsFlow(_host, _flow)).
 primitive(transportsFlow(_host, _flow)).
 
-
 primitive(physicalLayer(_protocol, _host1, _host2)).
 primitive(datalinkLayer(_protocol, _flow)).
 primitive(applicationLayer(_protocol, _flow)).
@@ -52,6 +51,8 @@ primitive(applicationLayer(_protocol, _flow)).
 primitive(weaknessPhysicalLayer(_sc, _protocol, _range)).
 primitive(weaknessApplicationLayer(_sc, _src, _destination, _protocol)).
 primitive(weaknessComponent(_sc, _device)).
+
+primitive(trafficVisibility(_host1, _host2)).
 
 primitive(isGateway(_host)).
 primitive(inSubnet(_host, _subnet)).
@@ -146,10 +147,24 @@ interaction_rule(
    rule_desc('Wireless Compromised', 'certain')).
 
 interaction_rule(
+  (bruteForceIO(Host2) :-
+    execCode(Host1, _),
+    networkSniffing(Host1, Host2),
+	  weaknessApplicationLayer(ds2, _, Host2, msp)),
+   rule_desc('Wireless Compromised', 'certain')).
+
+interaction_rule(
+  (bruteForceIO(Host2) :-
+    execCode(Host1, _),
+    networkSniffing(Host1, Host2),
+	  weaknessApplicationLayer(ds2, Host2, _, msp)),
+   rule_desc('Wireless Compromised', 'certain')).
+
+interaction_rule(
    (flowisibility(Host1, Host2, Protocol) :-
     weaknessApplicationLayer(ds2, Host1, Host2, Protocol),
     networkSniffing(Host1, Host2)),
-   rule_desc('Wireless Compromised', 'certain')).
+   rule_desc('Comunication Readble', 'certain')).
 
 interaction_rule(
    (moduleFirmware(Host) :-
@@ -169,22 +184,26 @@ interaction_rule(
    rule_desc('Firmware Compromised', 'certain')).
 
 interaction_rule(
+   (networkSniffing(Host1, Host2) :-
+    execCode(Host1, root),
+    trafficVisibility(Host1, Host2),
+    weaknessApplicationLayer(ds2, Host2, Host3, _)),
+   rule_desc('Firmware Compromised', 'certain')).
+
+interaction_rule(
+   (networkSniffing(Host1, Host3) :-
+    execCode(Host1, root),
+    trafficVisibility(Host1, Host2),
+    weaknessApplicationLayer(ds2, Host2, Host3, _)),
+   rule_desc('Firmware Compromised', 'certain')).
+
+interaction_rule(
     (canSpoof(Flow) :-
    	 wirelessCompromise(Host),
      controlFlow(_, Host, Flow)),
     rule_desc('Flow Spoofed', 'certain')).
 
-interaction_rule(
-   (canTamper(Flow) :-
-	  execCode(H, root),
-    controlFlow(H, _,Flow)),
-   rule_desc('Controller compromised', 'certain')).
 
-interaction_rule(
-   (canTamper(Flow) :-
-	  execCode(H, root),
-    controlFlow(_, H,Flow)),
-   rule_desc('Controller compromised', 'certain')).
 
 interaction_rule(
     (canTamper(Flow) :-
