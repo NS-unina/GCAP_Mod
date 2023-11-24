@@ -1,0 +1,25 @@
+digraph G {
+	1 [label="1:execCode(gpsModule,root)",shape=diamond];
+	2 [label="2:RULE 2 (Root execution code)",shape=ellipse];
+	3 [label="3:moduleFirmware(gpsModule)",shape=diamond];
+	4 [label="4:RULE 1 (Firmware Compromised)",shape=ellipse];
+	5 [label="5:weaknessComponent(ds6,gpsModule)",shape=box];
+	6 [label="6:attackerLocated(droneAccess)",shape=box];
+	7 [label="7:netVisibility(autopilot)",shape=diamond];
+	8 [label="8:RULE 17 (direct network access)",shape=ellipse];
+	9 [label="9:hacl(droneAccess,autopilot,_,_)",shape=box];
+	10 [label="10:networkSniffing(gpsModule,autopilot)",shape=diamond];
+	11 [label="11:RULE 3 (Firmware Compromised)",shape=ellipse];
+	12 [label="12:weaknessApplicationLayer(ds2,gpsModule,autopilot,msp)",shape=box];
+	5 -> 	4;
+	6 -> 	4;
+	4 -> 	3;
+	3 -> 	2;
+	2 -> 	1;
+	9 -> 	8;
+	6 -> 	8;
+	8 -> 	7;
+	12 -> 	11;
+	1 -> 	11;
+	11 -> 	10;
+}
