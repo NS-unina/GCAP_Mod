@@ -43,33 +43,35 @@ derived(logInService,3).
 derived(accessMaliciousInput,3).
 derived(canTamper,1).
 derived(canSpoof,1).
-derived(netVisibility,1).
 derived(arpPoisoning,2).
 derived(wirelessCompromise,1).
 derived(moduleFirmware,1).
 derived(networkSniffing,2).
+derived(bruteForceIO,1).
+derived(flowisibility,3).
+derived(netVisibility,1).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(moduleFirmware(gpsModule)).
+attack(canTamper(controlFlow4)).
 
-possible_duplicate_trace_step(because(1,rule_desc('Firmware Compromised',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
+possible_duplicate_trace_step(because(3,rule_desc('Firmware Compromised',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
 
-attack(execCode(gpsModule,root)).
+possible_duplicate_trace_step(because(4,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(4,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(7,rule_desc('Controller compromised',certain),canTamper(controlFlow4),[controlFlow(gpsModule,autopilot,controlFlow4),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(1,rule_desc('Firmware Compromised',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
+possible_duplicate_trace_step(because(3,rule_desc('Firmware Compromised',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(4,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-attack(networkSniffing(gpsModule,autopilot)).
+possible_duplicate_trace_step(because(4,rule_desc('Root execution code',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(3,rule_desc('Firmware Compromised',certain),networkSniffing(gpsModule,autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(5,rule_desc('Firmware Compromised',certain),networkSniffing(gpsModule,autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),execCode(gpsModule,root)])).
 
-attack(netVisibility(autopilot)).
+possible_duplicate_trace_step(because(1,rule_desc('Wireless Compromised',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(17,rule_desc('direct network access',certain),netVisibility(autopilot),[hacl(droneAccess,autopilot,_h3881,_h3882),attackerLocated(droneAccess)])).
+possible_duplicate_trace_step(because(11,rule_desc('Access transport network',certain),canTamper(controlFlow4),[controlFlow(gpsModule,autopilot,controlFlow4),bruteForceIO(autopilot)])).
 

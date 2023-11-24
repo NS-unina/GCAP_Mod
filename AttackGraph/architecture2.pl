@@ -1,11 +1,11 @@
 /* Attack goal */
 %attackGoal(canSpoof(feedbackFlow5)).
-attackGoal(moduleFirmware(gpsModule)).
-attackGoal(execCode(gpsModule, root)).
-attackGoal(networkSniffing(gpsModule, _)).
-attackGoal(netVisibility(autopilot)).
-attackGoal(bruteForceIO(autopilot)).
-attackGoal(canTamper(feedbackFlow4)).
+%attackGoal(moduleFirmware(gpsModule)).
+%attackGoal(execCode(gpsModule, root)).
+%attackGoal(networkSniffing(gpsModule, _)).
+%attackGoal(netVisibility(autopilot)).
+%attackGoal(bruteForceIO(autopilot)).
+attackGoal(canTamper(controlFlow4)).
 
 /* Attacker location */
 attackerLocated(droneAccess).
@@ -58,7 +58,7 @@ hacl(droneAccess,gpsModule,_,_).
 %weaknessPhysicalLayer(ac7, nmea0183, coverZone).
 
 weaknessComponent(ds6, gpsModule).
-controlFlow(gpsModule, autopilot, feedbackFlow4).
+controlFlow(gpsModule, autopilot, controlFlow4).
 
 applicationLayer(msp, gpsModule, autopilot).
 weaknessApplicationLayer(ds2, gpsModule, autopilot, msp).

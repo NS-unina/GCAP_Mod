@@ -52,6 +52,10 @@
 
 :-(dynamic(weaknessPhysicalLayer(_h3142,_h3143,_h3144))).
 
+:-(dynamic(weaknessApplicationLayer(_h3142,_h3143,_h3144,_h3145))).
+
+:-(dynamic(weaknessComponent(_h3142,_h3143))).
+
 :-(dynamic(isGateway(_h3142))).
 
 :-(dynamic(inSubnet(_h3142,_h3143))).

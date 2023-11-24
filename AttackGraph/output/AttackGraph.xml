@@ -38,7 +38,7 @@
 </vertex>
 <vertex>
 <id>2</id>
-<fact>RULE 1 (Flow Spoofed)</fact>
+<fact>RULE 6 (Flow Spoofed)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>
@@ -68,7 +68,7 @@
 </vertex>
 <vertex>
 <id>7</id>
-<fact>physicalLayer(nmea0183,gpsModule,satelite)</fact>
+<fact>physicalLayer(nmea0183,gpsModule,satellite)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>

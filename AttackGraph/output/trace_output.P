@@ -25,6 +25,8 @@ primitive(physicalLayer,3).
 primitive(datalinkLayer,2).
 primitive(applicationLayer,2).
 primitive(weaknessPhysicalLayer,3).
+primitive(weaknessApplicationLayer,4).
+primitive(weaknessComponent,2).
 primitive(isGateway,1).
 primitive(inSubnet,2).
 primitive(controlFlow,3).
@@ -41,15 +43,19 @@ derived(logInService,3).
 derived(accessMaliciousInput,3).
 derived(canTamper,1).
 derived(canSpoof,1).
-derived(netVisibility,1).
 derived(arpPoisoning,2).
 derived(wirelessCompromise,1).
+derived(moduleFirmware,1).
+derived(networkSniffing,2).
+derived(bruteForceIO,1).
+derived(flowisibility,3).
+derived(netVisibility,1).
 meta(attackGoal,1).
 meta(advances,2).
 
 attack(canSpoof(feedbackFlow5)).
 
-possible_duplicate_trace_step(because(0,rule_desc('Wireless Compromised',certain),wirelessCompromise(gpsModule),[weaknessPhysicalLayer(ac7,nmea0183,coverZone),physicalLayer(nmea0183,gpsModule,satelite),attackerLocated(coverZone)])).
+possible_duplicate_trace_step(because(0,rule_desc('Wireless Compromised',certain),wirelessCompromise(gpsModule),[weaknessPhysicalLayer(ac7,nmea0183,coverZone),physicalLayer(nmea0183,gpsModule,satellite),attackerLocated(coverZone)])).
 
-possible_duplicate_trace_step(because(1,rule_desc('Flow Spoofed',certain),canSpoof(feedbackFlow5),[controlFlow(satelite,gpsModule,feedbackFlow5),wirelessCompromise(gpsModule)])).
+possible_duplicate_trace_step(because(6,rule_desc('Flow Spoofed',certain),canSpoof(feedbackFlow5),[controlFlow(satelite,gpsModule,feedbackFlow5),wirelessCompromise(gpsModule)])).
 

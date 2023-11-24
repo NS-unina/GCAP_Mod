@@ -45,7 +45,7 @@ attackerLocated(coverZone).
 %/* Control Logic */
 /* Control flow satellite to GPS Module */
 controlFlow(satelite, gpsModule, feedbackFlow5).
-physicalLayer(nmea0183, gpsModule, satelite).
+physicalLayer(nmea0183, gpsModule, satellite).
 weaknessPhysicalLayer(ac7, nmea0183, coverZone).
 
 %networkServiceInfo(mainPLC,apache,httpProtocol,httpPort,root).

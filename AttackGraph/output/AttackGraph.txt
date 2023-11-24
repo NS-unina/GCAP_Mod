@@ -1,12 +1,12 @@
 1,"canSpoof(feedbackFlow5)","OR",0
-2,"RULE 1 (Flow Spoofed)","AND",1
+2,"RULE 6 (Flow Spoofed)","AND",1
 3,"controlFlow(satelite,gpsModule,feedbackFlow5)","LEAF",1
 2,3,-1
 4,"wirelessCompromise(gpsModule)","OR",0
 5,"RULE 0 (Wireless Compromised)","AND",1
 6,"weaknessPhysicalLayer(ac7,nmea0183,coverZone)","LEAF",1
 5,6,-1
-7,"physicalLayer(nmea0183,gpsModule,satelite)","LEAF",1
+7,"physicalLayer(nmea0183,gpsModule,satellite)","LEAF",1
 5,7,-1
 8,"attackerLocated(coverZone)","LEAF",1
 5,8,-1
