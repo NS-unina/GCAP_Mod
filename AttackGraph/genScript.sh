@@ -59,9 +59,20 @@ while [ $# -ne 0 ]; do
 done
 
 echo $architecture $rules $output
-[ -d $output ] && echo >&2 "output directory alredy exist" && exit 1;
+
+if [ -d $output ]; then
+    read -p "The directory '$output' already exists. Do you want to delete it? (y/n): " response
+    if [ $response == "y" ]; then
+        rm -r $output
+        echo "Directory '$output' deleted."
+    else
+        echo "Exiting script without creating or deleting the directory."
+        exit 0
+    fi
+fi
 
 mkdir $output
+
 docker run -ti --name mulval -v "$(pwd)"/"$output":/input -d --rm wilbercui/mulval bash -c "tail -f /dev/null"
 docker cp $architecture mulval:/input
 docker cp $rules mulval:/input
