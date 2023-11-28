@@ -51,7 +51,7 @@ The result of the INAV receiving the attack coordinates at the same time as it i
 
 ![Screen missione coordinate Attacco](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Coordinate_attaccante.png)
 
-## RC coomand terminal
+## RC command terminal
 
 After completing the gps attack , we go to the radio command terminal and run this script to initiate commands to direct the drone
 
@@ -61,7 +61,7 @@ After completing the gps attack , we go to the radio command terminal and run th
 ```
 
 The result is that INAV receives the commands and shown in the figure below
-![Screen coordinate radiocomando MSP](rcmissionpannel)
+![Screen coordinate radiocomando MSP](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/rcMission_panel.png)
 
 ## Attacker terminal for gps attack
 
@@ -74,7 +74,7 @@ Move to the attacker terminal and launch this command to complete the attack
 
 The result of the INAV receiving the attack coordinates at the same time as it is receiving the mission coordinates to be carried out
 
-![Screen comandi di Attacco](rcatatck)
+![Screen comandi di Attacco](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/rc_attack.png)
 
 ## 2. Physical Attack
 
@@ -87,7 +87,7 @@ After carrying out a software attack, to see if it was possible to carry out the
 The physical instruments useful for the complete set are a HackRF and a dji drone in this case a Mavic mini 2
 
 ![Mavic mini 2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
-![HackRF ONE](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.png)
+![HackRF ONE](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HACKRFOneF.png)
 
 ### Software Istruments
 
