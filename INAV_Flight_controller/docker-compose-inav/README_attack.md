@@ -15,7 +15,7 @@ Following the activation of MSP, proceed to enable GPS for navigation and teleme
 ![GPS Configuration: Enable GPS, Set Up Galileo, Change Protocol](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack2.png)
 
 Once the GPS configuration is completed, navigate to the "Receiver" tab. Adjust the receiver mode to MSP, then click 'Save and Restart' to implement the changes seamlessly.
-![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack1.png)
+![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/setrc.png)
 
 ## Launching docker exec for the Attacker container in a dedicated terminal
 
