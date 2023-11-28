@@ -1,3 +1,0 @@
-[submodule "INAV_Flight_controller/gps-sdr-sim/gps-sdr-sim"]
-	path = INAV_Flight_controller/gps-sdr-sim/gps-sdr-sim
-	url = https://github.com/osqzss/gps-sdr-sim
