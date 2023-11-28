@@ -5,7 +5,7 @@
 %attackGoal(networkSniffing(gpsModule, _)).
 %attackGoal(netVisibility(autopilot)).
 %attackGoal(bruteForceIO(autopilot)).
-attackGoal(canTamper(controlFlow4)).
+attackGoal(canTamper(controlFlow3)).
 
 /* Attacker location */
 attackerLocated(droneAccess).
@@ -58,7 +58,7 @@ hacl(droneAccess,gpsModule,_,_).
 %weaknessPhysicalLayer(ac7, nmea0183, coverZone).
 
 weaknessComponent(ds6, gpsModule).
-controlFlow(gpsModule, autopilot, controlFlow4).
+controlFlow(gpsModule, autopilot, controlFlow3).
 
 applicationLayer(msp, gpsModule, autopilot).
 weaknessApplicationLayer(ds2, gpsModule, autopilot, msp).

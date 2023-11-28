@@ -1,12 +1,21 @@
 /* Attack goal */
-attackGoal(canSpoof(feedbackFlow5)).
+%attackGoal(canSpoof(feedbackFlow5)).
+%attackGoal(moduleFirmware(gpsModule)).
+%attackGoal(execCode(gpsModule, root)).
+%attackGoal(networkSniffing(gpsModule, _)).
+%attackGoal(netVisibility(autopilot)).
+%attackGoal(bruteForceIO(autopilot)).
+attackGoal(canTamper(controlFlow3)).
 
 /* Attacker location */
-attackerLocated(coverZone).
+attackerLocated(droneAccess).
 
 /* Access Control rules */
 %hacl(scadaWorkStation,mainPLC,_,_).
-%hacl(attackerNode,mainPLC,_,_).
+
+hacl(droneAccess,autopilot,_,_).
+hacl(droneAccess,gpsModule,_,_).
+
 %
 %hacl(X,Y,_,_):-
 %	inSubnet(X,S),
@@ -44,9 +53,16 @@ attackerLocated(coverZone).
 
 %/* Control Logic */
 /* Control flow satellite to GPS Module */
-controlFlow(satelite, gpsModule, feedbackFlow5).
-physicalLayer(nmea0183, gpsModule, satellite).
-weaknessPhysicalLayer(ac7, nmea0183, coverZone).
+%controlFlow(satelite, gpsModule, feedbackFlow5).
+%physicalLayer(nmea0183, gpsModule, satelite).
+%weaknessPhysicalLayer(ac7, nmea0183, coverZone).
+
+weaknessComponent(ds6, gpsModule).
+controlFlow(gpsModule, autopilot, controlFlow3).
+
+applicationLayer(msp, gpsModule, autopilot).
+weaknessApplicationLayer(ds2, gpsModule, autopilot, msp).
+
 
 %networkServiceInfo(mainPLC,apache,httpProtocol,httpPort,root).
 %vulExists(mainPLC,cve2012_0668,apache).

@@ -1,0 +1,32 @@
+[xsb_configuration loaded]
+[sysinitrc loaded]
+[xsbbrat loaded]
+
+XSB Version 3.6. (Gazpatcho) of April 28, 2015
+[x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
+[Build date: 2015-12-04]
+
+| ?- [Compiling ./run]
+[run compiled, cpu time used: 0.0070 seconds]
+[run loaded]
+[libmulval loaded]
+[translate loaded]
+[attack_trace loaded]
+[auxiliary loaded]
+[/input/running_rules.P dynamically loaded, cpu time used: 0.0010 seconds]
+[/input/architecture2.pl dynamically loaded, cpu time used: 0.0010 seconds]
+[/root/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.0010 seconds]
+@@@@@@@@@@@@@@Done transforming in mode dynamic_decl
+
+[/input/dynamic_decl.gen dynamically loaded, cpu time used: 0.0020 seconds]
+@@@@@@@@@@@@@@Done transforming in mode completeTrace2
+
+@@@@@@@@@@@@@@Done transforming in mode completeTrace2
+
+@@@@@@@@@@@@@@Done transforming in mode stripExplanation
+
+Running attack simulation...
+
+yes
+| ?- 
+End XSB (cputime 0.06 secs, elapsetime 0.14 secs)

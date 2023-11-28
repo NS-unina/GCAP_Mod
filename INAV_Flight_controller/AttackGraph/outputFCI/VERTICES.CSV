@@ -1,0 +1,15 @@
+1,"canTamper(controlFlow2)","OR",0
+2,"RULE 13 (Enterprise)","AND",1
+3,"controlFlow(radiocontroller,autopilot,controlFlow2)","LEAF",1
+4,"bruteForceIO(autopilot)","OR",0
+5,"RULE 2 (ICS)","AND",1
+6,"weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp)","LEAF",1
+7,"networkSniffing(gpsModule,autopilot)","OR",0
+8,"RULE 9 (Enterprise)","AND",1
+9,"trafficVisibility(gpsModule,radiocontroller)","LEAF",1
+10,"execCode(gpsModule,root)","OR",0
+11,"RULE 6 (Enterprise)","AND",0.8
+12,"moduleFirmware(gpsModule)","OR",0
+13,"RULE 5 (Enterprise)","AND",1
+14,"weaknessComponent(ds6,gpsModule)","LEAF",1
+15,"attackerLocated(droneAccess)","LEAF",1

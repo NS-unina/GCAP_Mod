@@ -2,7 +2,7 @@
 
 This guide provides step-by-step instructions for creating and running this environment.
 
-## Structure of the 'environment
+## The structure of the environment
 
 ![struttura](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Structure.png)
 
@@ -19,7 +19,7 @@ General repo link: https://github.com/iNavFlight/inav-configurator/releases
 
 ```
    git clone https://github.com/NS-unina/GCAP_Mod.git
-   cd ~/docker-compose-inav
+   cd ~/INAV_Flight_controller/docker-compose-inav
 ```
 
 ## Run build command
@@ -40,7 +40,7 @@ docker-compose up -d
 ```
    1. docker exec -ti flight_controller bash
    2. docker exec -ti gps bash
-
+   3. docker exec -ti radio_command bash
 ```
 
 ## Continue to the relevant directories into flight_controller container
@@ -78,32 +78,12 @@ Now the Gps will enable and it will be red because it is not receiving any data
 
 After completing the setup let's move to the gps-related docker terminal
 
-## Before starting the gps script you need to edit the code and enter the correct ip related to the docker network
-
-Follow steps
-
-```
-1. Open a new terminal and run this command to verify the ip address
-2.  docker inspect fligh_controller
-```
-
-![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Docker_inspect.png)
-
 ## Gps terminal
 
 Return to the gps terminal and run these commands
 
 ```
-1. ./micro gps_nmea_SGTD_FG.py
-
-```
-
-Change ip and port
-
-![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/microgps.png)
-
-```
-2.  python3 gps_nmea_SGTD_FG.py
+1.  python3 gps_nmea_SGTD_FG.py
 
 ```
 
@@ -116,121 +96,3 @@ You can see that after launching the script in python the gps turned blue, this 
 Below is a gif extracted from the program
 
 ![gif](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/screen/Gifgps.gif)
-
-
-## After the overall configuration we move on to the security of the enviroment
-
-## 1. Software Attack
-
-
-The first step is to change the INAV gps configuration
-
-## Modify Inav-Configurator
-![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack1.png)
-In step 18 choose Enable MSP and click save and restart 
-![](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack2.png)
-Enable gps for navigation and telemetry and set up Galileo and change the protocol to MSP and finally save and restart.
-
-## Launching docker exec for the Attacker container in a dedicated terminal 
-
-```
-   1. docker exec -ti attack bash
-
-```
-![Container attack](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/attack_terminale_3.png)
-
-
-## Gps terminal
-
-After the complete setting of Inav and the attacker container we return to the gps terminal and run this command for start the mission
-
-```
-1. python3 missioneMSP.py  --ip 172.18.0.2 --port 5762 --file gps_coordinate_missione.txt
-
-```
-
-The result of INAV receiving of the mission
-![Screen missione coordinate MSP](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/CoordinateGPS_misisone_MSP.png)
-
-
-
-## Attacker terminal
-
-Move to the attacker terminal and launch this command to complete the attack
-
-```
-1. python3 attackMSP.py --ip 172.18.0.2 --port 5761 --file Coordinate_Attacco.txt
-
-```
-
-
-The result of the INAV receiving the attack coordinates at the same time as it is receiving the mission coordinates to be carried out
-
-![Screen missione coordinate Attacco](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Coordinate_attaccante.png)
-
-
-## 2. Physical Attack
-
-After carrying out a software attack, to see if it was possible to carry out the same attack on a physical level, we equipped ourselves with a dji drone and a HackRF One
-
-## Setting up the Environment
-### Physical Instruments
-
-The physical instruments useful for the complete set are a HackRF and a dji drone in this case a Mavic mini 2
-
-![Mavic mini 2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
-![HackRF ONE](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
-
-
-
-### Software Istruments
-
-The relevant software tool to carry out the attack is gps-sdr-sim available at the following link :https://github.com/osqzss/gps-sdr-sim
-
-
-```
-1. The first step is to download the RINEX navigation files for GPS ephemerides.
-It is necessary to download the latest file directly from the NASA website: https://cddis.nasa.gov/archive/gnss/data/daily/.
-
-```
-![Rinix1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix1.png)
-![Rinix2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix2.png)
-![Rinix3](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix3.png)
-![Rinix4](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix4.png)
-![Rinix5](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Rinix5.png)
-
-
-After downloading the file, copy it into the gps-sdr-sim directory (which has been previously compiled and set according to the guide in the previous link) and run the following command to create the .C8 file for the coordinates
-
-```
- ./gps-sdr-sim -e brdc3170.23n -s 2600000 -b 8 -o TestCina.C8 -l 30.293650, 120.161420,100 -d 10 
-
-```
-
-After creating the file, you need to install the hrfs software by following the following linkk guide :https://hackrf.readthedocs.io/en/latest/installing_hackrf_software.html
-
-
-When installation is complete, connect the whole set as in the photo:
-
-![setComplite](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/set_complite.png)
-
-
-Now, after connecting everything, you need to move to the gps-sdr-sim directory and run the following command to start the attack
-
-
-```
- ./hackrf_transfer -t Testcina.C8 -f 1575420000 -s 2600000 -a 0 
-
-```
-
-Running scripts
-
-![Running scripts](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/runnung_script.png)
-
-
-### Results
-
-![Risultato1](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato1.png)
-
-![Risultato2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Risultato2.jpg)
-
