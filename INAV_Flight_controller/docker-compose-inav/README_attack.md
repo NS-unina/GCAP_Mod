@@ -61,9 +61,10 @@ After completing the gps attack , we go to the radio command terminal and run th
 ```
 
 The result is that INAV receives the commands and shown in the figure below
+
 ![Screen coordinate radiocomando MSP](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/rcMission_panel.png)
 
-## Attacker terminal for gps attack
+## Attacker terminal for radio command attack
 
 Move to the attacker terminal and launch this command to complete the attack
 
