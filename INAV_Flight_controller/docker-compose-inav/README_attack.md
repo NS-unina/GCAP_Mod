@@ -53,28 +53,28 @@ The result of the INAV receiving the attack coordinates at the same time as it i
 
 ## RC coomand terminal
 
-After the complete setting of Inav and the attacker container we return to the gps terminal and run this command for start the mission
+After completing the gps attack , we go to the radio command terminal and run this script to initiate commands to direct the drone
 
 ```
-1. python3 missioneMSP.py  --ip 172.18.0.2 --port 5762 --file gps_coordinate_missione.txt
+1. python3 RCmission.py −−ip 172.18.0.2 −−port 5762
 
 ```
 
-The result of INAV receiving command
-![Screen missione coordinate MSP](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/CoordinateGPS_misisone_MSP.png)
+The result is that INAV receives the commands and shown in the figure below
+![Screen coordinate radiocomando MSP](rcmissionpannel)
 
-## Attacker terminal for radio command attack
+## Attacker terminal for gps attack
 
 Move to the attacker terminal and launch this command to complete the attack
 
 ```
-1. python3 attackMSP.py --ip 172.18.0.2 --port 5761 --file Coordinate_Attacco.txt
+1. python3 AttackRC_msp_fisso.py --ip 172.18.0.2 --port 5761
 
 ```
 
 The result of the INAV receiving the attack coordinates at the same time as it is receiving the mission coordinates to be carried out
 
-![Screen missione coordinate Attacco](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/Coordinate_attaccante.png)
+![Screen comandi di Attacco](rcatatck)
 
 ## 2. Physical Attack
 
@@ -87,7 +87,7 @@ After carrying out a software attack, to see if it was possible to carry out the
 The physical instruments useful for the complete set are a HackRF and a dji drone in this case a Mavic mini 2
 
 ![Mavic mini 2](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/mavicmini2-removeb.png)
-![HackRF ONE](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.jpg)
+![HackRF ONE](https://github.com/NS-unina/GCAP_Mod/blob/main/INAV_Flight_controller/Screen_attacco/HAckRFOne.png)
 
 ### Software Istruments
 
