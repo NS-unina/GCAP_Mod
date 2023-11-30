@@ -56,25 +56,25 @@ meta(advances,2).
 
 attack(canTamper(controlFlow3)).
 
-possible_duplicate_trace_step(because(5,rule_desc('Enterprise',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
+possible_duplicate_trace_step(because(5,rule_desc('Impact',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Enterprise',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(6,rule_desc('Execution',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Enterprise',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(6,rule_desc('Execution',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(5,rule_desc('Enterprise',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
+possible_duplicate_trace_step(because(5,rule_desc('Impact',certain),moduleFirmware(gpsModule),[weaknessComponent(ds6,gpsModule),attackerLocated(droneAccess)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Enterprise',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(6,rule_desc('Execution',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Enterprise',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
+possible_duplicate_trace_step(because(6,rule_desc('Execution',likely),execCode(gpsModule,root),[moduleFirmware(gpsModule)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('Enterprise',certain),networkSniffing(gpsModule,autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(7,rule_desc('Impact',certain),networkSniffing(gpsModule,autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(1,rule_desc('ICS',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(1,rule_desc('Initial Access',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('ICS',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
+possible_duplicate_trace_step(because(2,rule_desc('Initial Access',certain),bruteForceIO(autopilot),[weaknessApplicationLayer(ds2,gpsModule,autopilot,msp),networkSniffing(gpsModule,autopilot),execCode(gpsModule,root)])).
 
-possible_duplicate_trace_step(because(13,rule_desc('Enterprise',certain),canTamper(controlFlow3),[controlFlow(gpsModule,autopilot,controlFlow3),bruteForceIO(autopilot)])).
+possible_duplicate_trace_step(because(13,rule_desc('Discovery',certain),canTamper(controlFlow3),[controlFlow(gpsModule,autopilot,controlFlow3),bruteForceIO(autopilot)])).
 
-possible_duplicate_trace_step(because(13,rule_desc('Enterprise',certain),canTamper(controlFlow3),[controlFlow(gpsModule,autopilot,controlFlow3),bruteForceIO(autopilot)])).
+possible_duplicate_trace_step(because(13,rule_desc('Discovery',certain),canTamper(controlFlow3),[controlFlow(gpsModule,autopilot,controlFlow3),bruteForceIO(autopilot)])).
 

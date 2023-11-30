@@ -1,4 +1,4 @@
-[xsb_configuration loaded, cpu time used: 0.0010 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -7,18 +7,18 @@ XSB Version 3.6. (Gazpatcho) of April 28, 2015
 [Build date: 2015-12-04]
 
 | ?- [Compiling ./run]
-[run compiled, cpu time used: 0.0050 seconds]
-[run loaded, cpu time used: 0.0010 seconds]
+[run compiled, cpu time used: 0.0100 seconds]
+[run loaded]
 [libmulval loaded]
-[translate loaded, cpu time used: 0.0010 seconds]
+[translate loaded]
 [attack_trace loaded]
-[auxiliary loaded]
-[/input/running_rules.P dynamically loaded, cpu time used: 0.0040 seconds]
-[/input/architecture3.pl dynamically loaded, cpu time used: 0.0000 seconds]
+[auxiliary loaded, cpu time used: 0.0010 seconds]
+[/input/running_rules.P dynamically loaded, cpu time used: 0.0030 seconds]
+[/input/architecture3.pl dynamically loaded, cpu time used: 0.0010 seconds]
 [/root/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.0000 seconds]
 @@@@@@@@@@@@@@Done transforming in mode dynamic_decl
 
-[/input/dynamic_decl.gen dynamically loaded, cpu time used: 0.0000 seconds]
+[/input/dynamic_decl.gen dynamically loaded, cpu time used: 0.0010 seconds]
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
 
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
@@ -29,4 +29,4 @@ Running attack simulation...
 
 yes
 | ?- 
-End XSB (cputime 0.06 secs, elapsetime 0.14 secs)
+End XSB (cputime 0.07 secs, elapsetime 0.13 secs)

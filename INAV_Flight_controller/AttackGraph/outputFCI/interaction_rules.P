@@ -137,28 +137,28 @@ interaction_rule(
     attackerLocated(coverZone),
 	  physicalLayer(Protocol, Host, _),
     weaknessPhysicalLayer(ac7, Protocol, coverZone)),
-   rule_desc('ICS', 'certain')).
+   rule_desc('Inital Access', 'certain')).
 
 interaction_rule(
    (bruteForceIO(Host2) :-
     execCode(Host1, _),
     networkSniffing(Host1, Host2),
 	  weaknessApplicationLayer(ds2, Host1, Host2, msp)),
-   rule_desc('ICS', 'certain')).
+   rule_desc('Initial Access', 'certain')).
 
 interaction_rule(
   (bruteForceIO(Host2) :-
     execCode(Host1, _),
     networkSniffing(Host1, Host2),
 	  weaknessApplicationLayer(ds2, _, Host2, msp)),
-   rule_desc('ICS', 'certain')).
+   rule_desc('Initial Access', 'certain')).
 
 interaction_rule(
   (bruteForceIO(Host2) :-
     execCode(Host1, _),
     networkSniffing(Host1, Host2),
 	  weaknessApplicationLayer(ds2, Host2, _, msp)),
-   rule_desc('ICS', 'certain')).
+   rule_desc('Initial Access', 'certain')).
 
 interaction_rule(
    (flowisibility(Host1, Host2, Protocol) :-
@@ -170,18 +170,18 @@ interaction_rule(
    (moduleFirmware(Host) :-
     attackerLocated(droneAccess),
     weaknessComponent(ds6, Host)),
-   rule_desc('Enterprise', 'certain')).
+   rule_desc('Impact', 'certain')).
 
 interaction_rule(
   (execCode(Host, root) :-
 	moduleFirmware(Host)),
-  rule_desc('Enterprise', 'likely')).
+  rule_desc('Execution', 'likely')).
 
 interaction_rule(
    (networkSniffing(Host1, Host2) :-
     execCode(Host1, root),
     weaknessApplicationLayer(ds2, Host1, Host2, _)),
-   rule_desc('Enterprise', 'certain')).
+   rule_desc('Impact', 'certain')).
 
 interaction_rule(
    (networkSniffing(Host1, Host2) :-
@@ -201,7 +201,7 @@ interaction_rule(
     (canSpoof(Flow) :-
    	 wirelessCompromise(Host),
      controlFlow(_, Host, Flow)),
-    rule_desc('Flow Spoofed', 'certain')).
+    rule_desc('Evasion', 'certain')).
 
 
 
@@ -222,7 +222,7 @@ interaction_rule(
     (canTamper(Flow) :-
    	 bruteForceIO(Host),
      controlFlow(_, Host, Flow)),
-    rule_desc('Enterprise', 'certain')).
+    rule_desc('Discovery', 'certain')).
 
 interaction_rule(
     (canSpoof(Flow) :-

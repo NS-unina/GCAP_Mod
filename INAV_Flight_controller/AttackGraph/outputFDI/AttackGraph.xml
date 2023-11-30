@@ -86,7 +86,7 @@
 </vertex>
 <vertex>
 <id>2</id>
-<fact>RULE 13 (Enterprise)</fact>
+<fact>RULE 13 (Discovery)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>
@@ -104,7 +104,7 @@
 </vertex>
 <vertex>
 <id>5</id>
-<fact>RULE 1 (ICS)</fact>
+<fact>RULE 1 (Initial Access)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>
@@ -122,7 +122,7 @@
 </vertex>
 <vertex>
 <id>8</id>
-<fact>RULE 7 (Enterprise)</fact>
+<fact>RULE 7 (Impact)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>
@@ -134,7 +134,7 @@
 </vertex>
 <vertex>
 <id>10</id>
-<fact>RULE 6 (Enterprise)</fact>
+<fact>RULE 6 (Execution)</fact>
 <metric>0.8</metric>
 <type>AND</type>
 </vertex>
@@ -146,7 +146,7 @@
 </vertex>
 <vertex>
 <id>12</id>
-<fact>RULE 5 (Enterprise)</fact>
+<fact>RULE 5 (Impact)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>
@@ -164,7 +164,7 @@
 </vertex>
 <vertex>
 <id>15</id>
-<fact>RULE 2 (ICS)</fact>
+<fact>RULE 2 (Initial Access)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>

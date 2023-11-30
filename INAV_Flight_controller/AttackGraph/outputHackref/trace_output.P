@@ -56,7 +56,7 @@ meta(advances,2).
 
 attack(canSpoof(feedbackFlow4)).
 
-possible_duplicate_trace_step(because(0,rule_desc('ICS',certain),wirelessCompromise(gpsModule),[weaknessPhysicalLayer(ac7,nmea0183,coverZone),physicalLayer(nmea0183,gpsModule,satellite),attackerLocated(coverZone)])).
+possible_duplicate_trace_step(because(0,rule_desc('Inital Access',certain),wirelessCompromise(gpsModule),[weaknessPhysicalLayer(ac7,nmea0183,coverZone),physicalLayer(nmea0183,gpsModule,satellite),attackerLocated(coverZone)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('Enterprise',certain),canSpoof(feedbackFlow4),[controlFlow(satellite,gpsModule,feedbackFlow4),wirelessCompromise(gpsModule)])).
+possible_duplicate_trace_step(because(10,rule_desc('Evasion',certain),canSpoof(feedbackFlow4),[controlFlow(satellite,gpsModule,feedbackFlow4),wirelessCompromise(gpsModule)])).
 

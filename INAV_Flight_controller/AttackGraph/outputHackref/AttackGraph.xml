@@ -38,7 +38,7 @@
 </vertex>
 <vertex>
 <id>2</id>
-<fact>RULE 10 (Enterprise)</fact>
+<fact>RULE 10 (Evasion)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>
@@ -56,7 +56,7 @@
 </vertex>
 <vertex>
 <id>5</id>
-<fact>RULE 0 (ICS)</fact>
+<fact>RULE 0 (Inital Access)</fact>
 <metric>1</metric>
 <type>AND</type>
 </vertex>

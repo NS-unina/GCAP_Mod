@@ -137,7 +137,7 @@ interaction_rule(
     attackerLocated(coverZone),
 	  physicalLayer(Protocol, Host, _),
     weaknessPhysicalLayer(ac7, Protocol, coverZone)),
-   rule_desc('ICS', 'certain')).
+   rule_desc('Inital Access', 'certain')).
 
 interaction_rule(
    (bruteForceIO(Host2) :-
@@ -201,7 +201,7 @@ interaction_rule(
     (canSpoof(Flow) :-
    	 wirelessCompromise(Host),
      controlFlow(_, Host, Flow)),
-    rule_desc('Enterprise', 'certain')).
+    rule_desc('Evasion', 'certain')).
 
 
 
