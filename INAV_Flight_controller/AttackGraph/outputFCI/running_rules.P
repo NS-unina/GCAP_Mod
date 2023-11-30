@@ -188,14 +188,14 @@ interaction_rule(
     execCode(Host1, root),
     trafficVisibility(Host1, Host2),
     weaknessApplicationLayer(ds2, Host2, Host3, _)),
-   rule_desc('Enterprise', 'certain')).
+   rule_desc('Impact', 'certain')).
 
 interaction_rule(
    (networkSniffing(Host1, Host3) :-
     execCode(Host1, root),
     trafficVisibility(Host1, Host2),
     weaknessApplicationLayer(ds2, Host2, Host3, _)),
-   rule_desc('Enterprise', 'certain')).
+   rule_desc('Impact', 'certain')).
 
 interaction_rule(
     (canSpoof(Flow) :-

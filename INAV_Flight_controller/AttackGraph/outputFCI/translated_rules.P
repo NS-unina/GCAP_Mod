@@ -14,9 +14,9 @@
 
 :-(mvTrc(networkSniffing(_h3473,_h3474,7)),','(mvTrc(execCode(_h3473,root,_h3520)),','(weaknessApplicationLayer(ds2,_h3473,_h3474,_h3485),assert_trace(because(7,rule_desc('Impact',certain),networkSniffing(_h3473,_h3474),[weaknessApplicationLayer(ds2,_h3473,_h3474,_h3485),execCode(_h3473,root)]))))).
 
-:-(mvTrc(networkSniffing(_h3473,_h3474,8)),','(mvTrc(execCode(_h3473,root,_h3526)),','(trafficVisibility(_h3473,_h3474),','(weaknessApplicationLayer(ds2,_h3474,_h3490,_h3491),assert_trace(because(8,rule_desc('Enterprise',certain),networkSniffing(_h3473,_h3474),[weaknessApplicationLayer(ds2,_h3474,_h3490,_h3491),trafficVisibility(_h3473,_h3474),execCode(_h3473,root)])))))).
+:-(mvTrc(networkSniffing(_h3473,_h3474,8)),','(mvTrc(execCode(_h3473,root,_h3526)),','(trafficVisibility(_h3473,_h3474),','(weaknessApplicationLayer(ds2,_h3474,_h3490,_h3491),assert_trace(because(8,rule_desc('Impact',certain),networkSniffing(_h3473,_h3474),[weaknessApplicationLayer(ds2,_h3474,_h3490,_h3491),trafficVisibility(_h3473,_h3474),execCode(_h3473,root)])))))).
 
-:-(mvTrc(networkSniffing(_h3473,_h3474,9)),','(mvTrc(execCode(_h3473,root,_h3526)),','(trafficVisibility(_h3473,_h3486),','(weaknessApplicationLayer(ds2,_h3486,_h3474,_h3491),assert_trace(because(9,rule_desc('Enterprise',certain),networkSniffing(_h3473,_h3474),[weaknessApplicationLayer(ds2,_h3486,_h3474,_h3491),trafficVisibility(_h3473,_h3486),execCode(_h3473,root)])))))).
+:-(mvTrc(networkSniffing(_h3473,_h3474,9)),','(mvTrc(execCode(_h3473,root,_h3526)),','(trafficVisibility(_h3473,_h3486),','(weaknessApplicationLayer(ds2,_h3486,_h3474,_h3491),assert_trace(because(9,rule_desc('Impact',certain),networkSniffing(_h3473,_h3474),[weaknessApplicationLayer(ds2,_h3486,_h3474,_h3491),trafficVisibility(_h3473,_h3486),execCode(_h3473,root)])))))).
 
 :-(mvTrc(canSpoof(_h3473,10)),','(mvTrc(wirelessCompromise(_h3478,_h3517)),','(controlFlow(_h3480,_h3478,_h3473),assert_trace(because(10,rule_desc('Evasion',certain),canSpoof(_h3473),[controlFlow(_h3480,_h3478,_h3473),wirelessCompromise(_h3478)]))))).
 

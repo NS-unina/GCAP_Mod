@@ -5,7 +5,7 @@
 5,"RULE 2 (Initial Access)","AND",1
 6,"weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp)","LEAF",1
 7,"networkSniffing(gpsModule,autopilot)","OR",0
-8,"RULE 9 (Enterprise)","AND",1
+8,"RULE 9 (Impact)","AND",1
 9,"trafficVisibility(gpsModule,radiocontroller)","LEAF",1
 10,"execCode(gpsModule,root)","OR",0
 11,"RULE 6 (Execution)","AND",0.8

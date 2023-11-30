@@ -6,7 +6,7 @@ digraph G {
 	5 [label="5:RULE 2 (Initial Access)",shape=ellipse];
 	6 [label="6:weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp)",shape=box];
 	7 [label="7:networkSniffing(gpsModule,autopilot)",shape=diamond];
-	8 [label="8:RULE 9 (Enterprise)",shape=ellipse];
+	8 [label="8:RULE 9 (Impact)",shape=ellipse];
 	9 [label="9:trafficVisibility(gpsModule,radiocontroller)",shape=box];
 	10 [label="10:execCode(gpsModule,root)",shape=diamond];
 	11 [label="11:RULE 6 (Execution)",shape=ellipse];

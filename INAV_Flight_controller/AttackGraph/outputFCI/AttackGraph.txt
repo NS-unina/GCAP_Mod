@@ -7,7 +7,7 @@
 6,"weaknessApplicationLayer(ds2,radiocontroller,autopilot,msp)","LEAF",1
 5,6,-1
 7,"networkSniffing(gpsModule,autopilot)","OR",0
-8,"RULE 9 (Enterprise)","AND",1
+8,"RULE 9 (Impact)","AND",1
 8,6,-1
 9,"trafficVisibility(gpsModule,radiocontroller)","LEAF",1
 8,9,-1
